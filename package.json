@@ -20,5 +20,9 @@
   "version": "1.0.0",
   "repository": "git@github.com:KaiserPhemi/luminskin-demo.git",
   "author": "KaiserPhemi <kaiser.phemi@protonmail.ch>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start":"webpack --mode production",
+    "dev":"webpack serve --mode development --open"
+  }
 }
