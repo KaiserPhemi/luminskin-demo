@@ -13,6 +13,8 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.11",
+    "graphql": "^15.5.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -22,7 +24,7 @@
   "author": "KaiserPhemi <kaiser.phemi@protonmail.ch>",
   "license": "MIT",
   "scripts": {
-    "start":"webpack --mode production",
-    "dev":"webpack serve --mode development --open"
+    "start": "webpack --mode production",
+    "dev": "webpack serve --mode development --open"
   }
 }
