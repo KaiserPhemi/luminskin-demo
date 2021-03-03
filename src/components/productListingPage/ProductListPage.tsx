@@ -1,6 +1,12 @@
 // react library
 import * as React from "react";
 
+// component(s)
+import PageBanner from '../banner/ProductPageBanner'
+
+// styles
+import './styles.scss';
+
 /**
  * @desc Product listing page
  * @author Oluwafemi Akinwa
@@ -14,18 +20,11 @@ const ProductListPage = () => {
   ];
 
   return (
-    <div>
-      <ul>
-        {list.map((item, index) => (
-          <li key={index} className="item-list">
-            <span>{item.name}</span>
-            <span>{`From $${item.price}`}</span>
-            <span>
-              <button>Add to Cart</button>
-            </span>
-          </li>
-        ))}
-      </ul>
+    <div className="product-list-page">
+      <div>
+        <PageBanner />
+      </div>
+      <div>product-list</div>
     </div>
   );
 };
