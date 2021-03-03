@@ -2,29 +2,25 @@
 import * as React from "react";
 
 // component(s)
-import PageBanner from '../banner/ProductPageBanner'
+import PageBanner from "../banner/ProductPageBanner";
+import ProductList from "./ProductList";
 
 // styles
-import './styles.scss';
+// import './styles.scss';
 
 /**
  * @desc Product listing page
  * @author Oluwafemi Akinwa
  */
 const ProductListPage = () => {
-  const list = [
-    { name: "Age Management Collection", price: 48 },
-    { name: "Keratin Collection", price: 18 },
-    { name: "Keratin Management", price: 10 },
-    { name: "Dark Circle Defence", price: 28 },
-  ];
-
   return (
     <div className="product-list-page">
       <div>
         <PageBanner />
       </div>
-      <div>product-list</div>
+      <div>
+        <ProductList  />
+      </div>
     </div>
   );
 };

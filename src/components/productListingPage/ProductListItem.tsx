@@ -4,17 +4,32 @@ import * as React from "react";
 // component(s)
 import AddItemBtn from "../commonComponents/AddItemBtn";
 
+// interface
+interface Props {
+  productName: string;
+  productPrice: number;
+}
+
 /**
- * @desc Product item component
+ * @desc A single component for item
+ * @param props 
  * @author Oluwafemi Akinwa
  */
-const ProductListItem = ({}) => {
+const ProductListItem: React.FC<Props> = ({ productName, productPrice }) => {
+  /**
+   * @desc Adds item to cart
+   * @author Oluwafemi Akinwa
+   */
+  const addItemHandler = () => {
+    console.log("we clicked");
+  };
+
   return (
     <div>
       <img src="" alt="product_image" />
-      <span>Product Name</span>
-      <span>Product Price</span>
-      <AddItemBtn buttonText="Add to Cart" />
+      <span>{productName}</span>
+      <span>{`From $${productPrice}`}</span>
+      <AddItemBtn onClick={addItemHandler} buttonText="Add to Cart" />
     </div>
   );
 };
