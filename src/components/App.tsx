@@ -4,6 +4,10 @@ import * as React from "react";
 // components
 import ProductListingPage from './productListingPage/ProductListPage';
 import NavigationBar from "./navigationBar/NavigationBar";
+import ShoppingCartWidget from "./shoppingCart/ShoppingCartWidget";
+
+// styles
+import './index.scss'
 
 // interface
 interface Props {}
@@ -16,6 +20,7 @@ const App: React.FC<Props> = () => {
     <div>
       <NavigationBar />
       <ProductListingPage />
+      <ShoppingCartWidget />
     </div>
   );
 };

@@ -2,7 +2,10 @@
 import * as React from "react";
 
 // component(s)
-import AddItemBtn from "../commonComponents/AddItemBtn";
+import DefaultButton from "../commonComponents/DefaultButton";
+
+// utils
+import customText from '../../utils/constants';
 
 // interface
 interface Props {
@@ -21,7 +24,7 @@ const ProductListItem: React.FC<Props> = ({ productName, productPrice }) => {
    * @author Oluwafemi Akinwa
    */
   const addItemHandler = () => {
-    console.log("we clicked");
+    alert("Item added to cart.");
   };
 
   return (
@@ -29,7 +32,11 @@ const ProductListItem: React.FC<Props> = ({ productName, productPrice }) => {
       <img src="" alt="product_image" />
       <span>{productName}</span>
       <span>{`From $${productPrice}`}</span>
-      <AddItemBtn onClick={addItemHandler} buttonText="Add to Cart" />
+      <DefaultButton
+        onClick={addItemHandler}
+        buttonText={customText.ADD_ITEM_TEXT}
+        btnClass={customText.ADD_ITEM_BTN_CLASS}
+      />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import PageBanner from "../banner/ProductPageBanner";
 import ProductList from "./ProductList";
 
 // styles
-// import './styles.scss';
+import "./styles.scss";
 
 /**
  * @desc Product listing page

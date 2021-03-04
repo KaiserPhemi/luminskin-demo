@@ -1,27 +1,26 @@
 // react libraries
 import * as React from "react";
 
+// styles
+import "./styles.scss";
+
 // interface
 interface Props {
   buttonText: string;
   onClick: () => void;
+  btnClass?: string;
 }
 
 /**
  * @desc Add to cart button component
  * @author Oluwafemi Akinwa
  */
-const AddItemBtn: React.FC<Props> = ({ buttonText, onClick }) => {
+const DefaultButton: React.FC<Props> = ({ buttonText, onClick, btnClass }) => {
   return (
-    <button
-      style={{
-        cursor: "pointer",
-      }}
-      onClick={onClick}
-    >
+    <button className={`default-btn ${btnClass || ""}`} onClick={onClick}>
       {buttonText}
     </button>
   );
 };
 
-export default AddItemBtn;
+export default DefaultButton;

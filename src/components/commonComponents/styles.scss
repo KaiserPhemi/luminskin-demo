@@ -1,0 +1,29 @@
+.default-btn {
+  cursor: pointer;
+  background-color: #4B5548;
+  color: #fff;
+  padding: 10px;
+  height: 2.5rem;
+  text-align: center;
+  border: none;
+  outline: none;
+  margin: 0.5rem 0;
+}
+
+.add-item-btn {
+  width: 6.5rem;
+  font-size: 0.65rem;
+}
+
+.checkout-btn{
+  font-size: 0.55rem;
+  word-spacing: 2px;
+}
+
+.subscription-btn{
+  color: #4B5548;
+  word-spacing: 2px;
+  border:1px solid #4B5548;
+  background-color: #fff;
+  font-size: 0.55rem;
+}
