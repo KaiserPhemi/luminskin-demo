@@ -4,28 +4,17 @@ import * as React from "react";
 // component(s)
 import FilterBar from '../filter/FilterBar';
 
+// styles
+import './banner.scss';
+
 /**
  * @desc Page banner with filter
  * @author Oluwafemi Akinwa
  */
 const ProductPageBanner = () => {
   return (
-    <div
-      className="banner-wrapper"
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        height: "20vh",
-        margin: "5rem 10%",
-      }}
-    >
-      <div
-        className="banner-text"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
+    <div className="banner-wrapper">
+      <div className="banner-text">
         <span>All Products</span>
         <span>A 360 degree look at Lumin</span>
       </div>

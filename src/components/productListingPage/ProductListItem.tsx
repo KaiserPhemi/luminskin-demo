@@ -37,12 +37,11 @@ const ProductListItem: React.FC<Props> = ({
 
   return (
     <div className="listed-product-wrapper">
-      {/* <div className="product-image">
-      </div> */}
       <img src={imgURL} alt="product_image" className="product-image" />
-
-      <span className='product-title'>{productName}</span>
-      <span className='product-price'>{`From $${productPrice}`}</span>
+      <span className="product-title">{productName}</span>
+      <span className="product-price">{`From $${productPrice.toFixed(
+        2
+      )}`}</span>
       <DefaultButton
         onClick={addItemHandler}
         buttonText={customText.ADD_ITEM_TEXT}

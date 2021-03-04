@@ -1,0 +1,12 @@
+.banner-wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 20vh;
+  background-color: #fff;
+  padding: 15%;
+
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+  }
+}
