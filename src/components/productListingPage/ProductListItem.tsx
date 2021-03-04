@@ -7,10 +7,14 @@ import DefaultButton from "../commonComponents/DefaultButton";
 // utils
 import customText from '../../utils/constants';
 
+// styles
+import './list-item.scss';
+
 // interface
 interface Props {
   productName: string;
   productPrice: number;
+  imgURL: string;
 }
 
 /**
@@ -18,7 +22,11 @@ interface Props {
  * @param props 
  * @author Oluwafemi Akinwa
  */
-const ProductListItem: React.FC<Props> = ({ productName, productPrice }) => {
+const ProductListItem: React.FC<Props> = ({
+  productName,
+  productPrice,
+  imgURL,
+}) => {
   /**
    * @desc Adds item to cart
    * @author Oluwafemi Akinwa
@@ -28,10 +36,13 @@ const ProductListItem: React.FC<Props> = ({ productName, productPrice }) => {
   };
 
   return (
-    <div>
-      <img src="" alt="product_image" />
-      <span>{productName}</span>
-      <span>{`From $${productPrice}`}</span>
+    <div className="listed-product-wrapper">
+      {/* <div className="product-image">
+      </div> */}
+      <img src={imgURL} alt="product_image" className="product-image" />
+
+      <span className='product-title'>{productName}</span>
+      <span className='product-price'>{`From $${productPrice}`}</span>
       <DefaultButton
         onClick={addItemHandler}
         buttonText={customText.ADD_ITEM_TEXT}

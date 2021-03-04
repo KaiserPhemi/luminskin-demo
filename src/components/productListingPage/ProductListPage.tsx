@@ -15,12 +15,8 @@ import "./styles.scss";
 const ProductListPage = () => {
   return (
     <div className="product-list-page">
-      <div>
         <PageBanner />
-      </div>
-      <div>
         <ProductList  />
-      </div>
     </div>
   );
 };

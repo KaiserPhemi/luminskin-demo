@@ -1,4 +1,11 @@
 .product-list-page {
   display: grid;
   background-color: #E3E6E3;
+  padding: 5%;
+
+  .product-list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
 }
