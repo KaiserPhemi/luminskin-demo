@@ -3,6 +3,7 @@ import * as React from "react";
 
 // component(s)
 import DefaultButton from '../commonComponents/DefaultButton';
+import CartItem from "./CartItem";
 
 // utils
 import customText from '../../utils/constants';
@@ -35,7 +36,9 @@ const ShoppingCartWidget = () => {
     <div className="shopping-cart-wrapper">
       <div></div>
       <div></div>
-      <div></div>
+
+      <CartItem />
+
       <div></div>
       <div className="cart-btn-wrapper">
         <DefaultButton

@@ -6,6 +6,77 @@
   border: 1px solid green;
   right: 50%;
   padding: 1rem;
+  background-color: #F2F3F0;
+
+  .cart-item-wrapper {
+
+    .product-wrapper{
+      display: flex;
+      height: 10rem;
+
+      .product-desc {
+        flex: 2;
+        background-color: #fff;
+        padding: 10px 40px 10px 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .product-name {
+          padding: 10px 0 20px;
+        }
+
+        .price-qtty-wrapper {
+          display: flex;
+          justify-content: space-between;
+
+          .item-quantity {
+            border: 1px solid #BCBCBC;
+            display: flex;
+            height: 2.5rem;
+            padding: 10px;
+
+            .qtty-btn {
+              border: none;
+              background-color: #fff;
+              outline: none;
+              cursor: pointer;
+              width: 1.5rem;
+            }
+
+            input {
+              border: none;
+              background-color: #fff;
+              text-align: center;
+              outline: none;
+              width: 4rem;
+            }
+
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+              -webkit-appearance: none;
+              margin: 0;
+            }
+          }
+        }
+      }
+
+      .product-img {
+        flex: 1;
+        background-color:#FDFDFD;
+        position: relative;
+        padding: 10px 20px;
+
+        .delete-btn {
+          display: flex;
+          justify-content: flex-end;
+          right: 0;
+          top: 0;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 
   .cart-btn-wrapper {
     display: flex; 
