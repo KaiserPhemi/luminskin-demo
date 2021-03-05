@@ -1,9 +1,36 @@
 .main-header {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #E3E6E3;
+  border-bottom: 1px solid #E3E6E3;
+  padding: 1.2rem 2rem;
 
-  .nav-links {}
+  .nav-links {
+    display: flex;
+    align-items: center;
 
-  .account-links {}
+    .logo-wrapper {
+      text-transform: uppercase;
+      letter-spacing: 1rem;
+      font-size: 1.5rem;
+      font-weight: 300;
+      cursor: pointer;
+    }
+    .menu-links {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+    }
+  }
+
+  .text-format {
+    font-size: 0.8rem;
+    padding-left: 2rem;
+    cursor: pointer;
+  }
+
+  .account-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

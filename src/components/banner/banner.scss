@@ -1,12 +1,23 @@
 .banner-wrapper {
   display: flex;
   justify-content: space-between;
-  height: 20vh;
+  align-items: center;
+  height: 40vh;
   background-color: #fff;
-  padding: 15%;
+  padding: 2rem 15rem;
 
   .banner-text {
     display: flex;
     flex-direction: column;
+
+    span:first-child {
+      font-size: 2rem;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    span:last-child {
+      font-size: 0.8rem;
+    }
   }
 }

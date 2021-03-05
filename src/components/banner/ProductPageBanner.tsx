@@ -16,7 +16,7 @@ const ProductPageBanner = () => {
     <div className="banner-wrapper">
       <div className="banner-text">
         <span>All Products</span>
-        <span>A 360 degree look at Lumin</span>
+        <span>A 360&#176; look at Lumin</span>
       </div>
       <div>
         <FilterBar />
