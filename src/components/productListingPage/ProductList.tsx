@@ -13,8 +13,9 @@ import { GET_PRODUCTS } from "../../graphql/queries";
  * @author Oluwafemi Akinwa
  */
 const ProductList = () => {
-  const [productList, setProductList] = React.useState([]); 
+  const [productList, setProductList] = React.useState([]);
   const { error, loading, data } = useQuery(GET_PRODUCTS);
+  const [shoppingCart, setShoppingCart] = React.useState([]);
 
   /**
    * @desc Makes API call for all products
@@ -26,15 +27,30 @@ const ProductList = () => {
     }
   }, [data]);
 
+  const checkItemInCart = () => {};
+
+  /**
+   * @desc
+   * @param item
+   */
+  const addItemToCart = (item: any) => {
+    // check the cart
+    // if item exist increase number
+    // if not add as one
+    console.log("The item", item);
+  };
+
   return (
-    <div className='product-list-grid'>
+    <div className="product-list-grid">
       {productList &&
-        productList.map((item:  any, index) => (
+        productList.map((item: any, index) => (
           <ProductListItem
             key={item.id}
             productName={item.title}
             productPrice={item.price}
             imgURL={item.image_url}
+            item={item}
+            addItemHandler={addItemToCart}
           />
         ))}
     </div>

@@ -15,6 +15,8 @@ interface Props {
   productName: string;
   productPrice: number;
   imgURL: string;
+  item: {};
+  addItemHandler: (item: any) => void;
 }
 
 /**
@@ -26,14 +28,9 @@ const ProductListItem: React.FC<Props> = ({
   productName,
   productPrice,
   imgURL,
+  addItemHandler,
+  item,
 }) => {
-  /**
-   * @desc Adds item to cart
-   * @author Oluwafemi Akinwa
-   */
-  const addItemHandler = () => {
-    alert("Item added to cart.");
-  };
 
   return (
     <div className="listed-product-wrapper">
@@ -43,7 +40,7 @@ const ProductListItem: React.FC<Props> = ({
         2
       )}`}</span>
       <DefaultButton
-        onClick={addItemHandler}
+        onClick={() => addItemHandler(item)}
         buttonText={customText.ADD_ITEM_TEXT}
         btnClass={customText.ADD_ITEM_BTN_CLASS}
       />
