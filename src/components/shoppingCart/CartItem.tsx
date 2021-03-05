@@ -4,11 +4,16 @@ import * as React from "react";
 // component(s)
 import CartItemQuantity from './CartItemQuantity';
 
+// interface
+interface Props {
+  item: { productCount: number };
+}
+
 /**
  * @desc An item in the shopping cart
  * @author Oluwafemi Akinwa
  */
-const CartItem = () => {
+const CartItem: React.FC<Props> = ({ item }) => {
   /**
    * @desc Removes an item from the cart
    * @author Oluwafemi Akinwa
@@ -32,6 +37,7 @@ const CartItem = () => {
       <div className="product-wrapper">
         <div className="product-desc">
           <div className="product-name">Product Name</div>
+          <span className="product-title">{item.productCount}</span>
           <div className="price-qtty-wrapper">
             <CartItemQuantity
               handleChange={handleInputChange}

@@ -15,7 +15,7 @@ import {ShoppingCartContext} from '../shoppingCartContext/ShoppingCartContext'
 import './styles.scss';
 
 /**
- * @desc
+ * @desc Side bar shopping cart
  * @author Oluwafemi Akinwa
  */
 const ShoppingCartWidget = () => {
@@ -42,7 +42,9 @@ const ShoppingCartWidget = () => {
       <div></div>
       <div></div>
       {cart.length > 0
-        ? cart.map((cartItem, index) => <CartItem key={index} />)
+        ? cart.map((cartItem, index) => (
+            <CartItem item={cartItem} key={index} />
+          ))
         : "Cart is Empty"}
       <div></div>
       <div className="cart-btn-wrapper">

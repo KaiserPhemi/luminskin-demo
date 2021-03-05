@@ -13,23 +13,42 @@ import ProductListItem from "./ProductListItem";
  */
 const ProductList = () => {
   const { productList } = React.useContext(ShoppingCartContext);
+  const { shoppingCart } = React.useContext(ShoppingCartContext);
+  const [cart, setCart] = shoppingCart;
   const [products, setProducts] = productList;
 
-  const checkItemInCart = () => {
-    // loop throough cart list
-    // check if item is present
-    // return true or false
+  /**
+   * @desc Checks if item is already in the cart
+   * @param product
+   * @author Oluwafemi Akinwa
+   */
+  const checkItemInCart = (product: any): any => {
+    let checkIndex = cart.findIndex((item) => item.id === product.id);
+    if (checkIndex < 0) {
+      return false;
+    } else {
+      return true;
+    }
   };
 
   /**
-   * @desc
-   * @param item
+   * @desc Adds item to cart
+   * @param product
+   * @author Oluwafemi Akinwa
    */
-  const addItemToCart = (item: any) => {
-    // check the cart
-    // if item exist increase number
-    // if not add as one
-    console.log("The item", item);
+  const addItemToCart = (product: any) => {
+    if (checkItemInCart(product)) {
+      const modifiedCart = cart.map((item) => {
+        let tempItem = Object.assign({}, item);
+        if (tempItem.id === product.id) {
+          tempItem.productCount++;
+        }
+        return tempItem;
+      });
+      setCart([...modifiedCart]);
+    } else {
+      setCart((prevCart) => [...prevCart, product]);
+    }
   };
 
   return (

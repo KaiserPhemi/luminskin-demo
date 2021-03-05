@@ -22,16 +22,20 @@ export const ShoppingCartProvider = (props) => {
   const [productList, setProductList] = React.useState([]);
   const [shoppingCart, setShoppingCart] = React.useState([]);
 
+  const formatArray = (productArr: any) => {
+    return productArr.map((product) => ({ ...product, productCount: 1 }));
+  };
+
   /**
    * @desc Makes API call for all products
    * @author Oluwafemi Akinwa
    */
   React.useEffect(() => {
     if (data) {
-      setProductList(data.products);
+      setProductList(formatArray(data.products));
     }
   }, [data]);
-
+  
   return (
     <ShoppingCartContext.Provider
       value={{
