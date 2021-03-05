@@ -17,7 +17,7 @@ import App from "./App";
 
 // Apollo Client 
 const errorLink = onError(({ graphQLErrors, networkError }) => {
-  if (graphQLErrors) {
+  if (graphQLErrors && graphQLErrors.length > 0) {
     graphQLErrors.map(({ message, locations, path }) => {
       console.log(
         `[GraphQL error]: Message: ${message}, 

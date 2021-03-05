@@ -8,6 +8,9 @@ import CartItem from "./CartItem";
 // utils
 import customText from '../../utils/constants';
 
+// context 
+import {ShoppingCartContext} from '../shoppingCartContext/ShoppingCartContext'
+
 // styles
 import './styles.scss';
 
@@ -16,6 +19,8 @@ import './styles.scss';
  * @author Oluwafemi Akinwa
  */
 const ShoppingCartWidget = () => {
+  const { shoppingCart } = React.useContext(ShoppingCartContext);
+  const [cart, setCart] = shoppingCart;
   /**
    * @desc Handles user subscription
    * @author Oluwafemi Akinwa
@@ -36,9 +41,9 @@ const ShoppingCartWidget = () => {
     <div className="shopping-cart-wrapper">
       <div></div>
       <div></div>
-
-      <CartItem />
-
+      {cart.length > 0
+        ? cart.map((cartItem, index) => <CartItem key={index} />)
+        : "Cart is Empty"}
       <div></div>
       <div className="cart-btn-wrapper">
         <DefaultButton

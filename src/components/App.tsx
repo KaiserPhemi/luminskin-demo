@@ -6,6 +6,9 @@ import ProductListingPage from './productListingPage/ProductListPage';
 import NavigationBar from "./navigationBar/NavigationBar";
 import ShoppingCartWidget from "./shoppingCart/ShoppingCartWidget";
 
+// context provider
+import {ShoppingCartProvider} from '../components/shoppingCartContext/ShoppingCartContext';
+
 // styles
 import './index.scss'
 
@@ -17,11 +20,13 @@ interface Props {}
  */
 const App: React.FC<Props> = () => {
   return (
-    <div>
-      <NavigationBar />
-      <ProductListingPage />
-      <ShoppingCartWidget />
-    </div>
+    <ShoppingCartProvider>
+      <div>
+        <NavigationBar />
+        <ProductListingPage />
+        <ShoppingCartWidget />
+      </div>
+    </ShoppingCartProvider>
   );
 };
 

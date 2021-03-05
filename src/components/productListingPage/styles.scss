@@ -7,3 +7,23 @@
     background-color: #E3E6E3;
   }
 }
+
+// Tablets and small devices
+@media only screen and (max-width: 768px) {
+  .product-list-page {
+    .product-list-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+}
+
+// Phones
+@media only screen and (max-width: 600px) {
+  .product-list-page {
+    .product-list-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+}
+}

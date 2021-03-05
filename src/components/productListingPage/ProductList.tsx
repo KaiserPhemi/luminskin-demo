@@ -1,33 +1,25 @@
 // react libraries
 import * as React from "react";
 
-import { useQuery } from "@apollo/client";
+// context 
+import {ShoppingCartContext} from '../shoppingCartContext/ShoppingCartContext'
 
 // components
 import ProductListItem from "./ProductListItem";
 
-// graphql queries
-import { GET_PRODUCTS } from "../../graphql/queries";
 /**
  * @desc Displays list of items on page
  * @author Oluwafemi Akinwa
  */
 const ProductList = () => {
-  const [productList, setProductList] = React.useState([]);
-  const { error, loading, data } = useQuery(GET_PRODUCTS);
-  const [shoppingCart, setShoppingCart] = React.useState([]);
+  const { productList } = React.useContext(ShoppingCartContext);
+  const [products, setProducts] = productList;
 
-  /**
-   * @desc Makes API call for all products
-   * @author Oluwafemi Akinwa
-   */
-  React.useEffect(() => {
-    if (data) {
-      setProductList(data.products);
-    }
-  }, [data]);
-
-  const checkItemInCart = () => {};
+  const checkItemInCart = () => {
+    // loop throough cart list
+    // check if item is present
+    // return true or false
+  };
 
   /**
    * @desc
@@ -42,8 +34,8 @@ const ProductList = () => {
 
   return (
     <div className="product-list-grid">
-      {productList &&
-        productList.map((item: any, index) => (
+      {products &&
+        products.map((item: any, index) => (
           <ProductListItem
             key={item.id}
             productName={item.title}
