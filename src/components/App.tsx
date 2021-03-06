@@ -21,11 +21,11 @@ interface Props {}
 const App: React.FC<Props> = () => {
   return (
     <ShoppingCartProvider>
-      <div>
-        <NavigationBar />
-        <ProductListingPage />
+        <div>
+          <NavigationBar />
+          <ProductListingPage />
+        </div>
         <ShoppingCartWidget />
-      </div>
     </ShoppingCartProvider>
   );
 };

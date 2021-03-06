@@ -37,16 +37,56 @@ const ShoppingCartWidget = () => {
     alert("Feature not available yet.");
   };
 
+  /**
+   * @desc Adds or reduce item quantity in cart
+   * @param evt
+   * @author Oluwafemi Akinwa
+   */
+  const handleItemQuantity = (evt: any, product: any) => {
+    const { name } = evt.target;
+    const modifiedCart = cart.map((item) => {
+      let tempItem = Object.assign({}, item);
+      if (tempItem.id === product.id) {
+        if (name === "plus") {
+          tempItem.productCount++;
+        } else if (name === "minus") {
+          if (tempItem.productCount <= 1) {
+            return tempItem;
+          } else {
+            tempItem.productCount--;
+          }
+        }
+      }
+      return tempItem;
+    });
+    setCart([...modifiedCart]);
+  };
+
+  /**
+   * @desc Deletes an item from the cart
+   * @param product
+   * @author Oluwafemi Akinwa
+   */
+  const deleteCartItem = (product: any) => {
+    const filteredCart = cart.filter((item) => item.id !== product.id);
+    setCart([...filteredCart]);
+  };
+
   return (
     <div className="shopping-cart-wrapper">
-      <div></div>
-      <div></div>
-      {cart.length > 0
-        ? cart.map((cartItem, index) => (
-            <CartItem item={cartItem} key={index} />
-          ))
-        : "Cart is Empty"}
-      <div></div>
+      {cart.length > 0 ? (
+        cart.map((cartItem, index) => (
+          <CartItem
+            item={cartItem}
+            key={index}
+            handleItemQuantity={handleItemQuantity}
+            handleItemDelete={deleteCartItem}
+          />
+        ))
+      ) : (
+        <div>Cart is Empty</div>
+      )}
+
       <div className="cart-btn-wrapper">
         <DefaultButton
           buttonText={customText.SUBSCRIPTION_TEXT}

@@ -6,52 +6,62 @@ import CartItemQuantity from './CartItemQuantity';
 
 // interface
 interface Props {
-  item: { productCount: number };
+  item: {
+    productCount: number;
+    image_url: string;
+    title: string;
+    price: number;
+  };
+  handleItemQuantity: (evt: any, item: any) => void;
+  handleItemDelete: (item: any) => any;
 }
 
 /**
  * @desc An item in the shopping cart
  * @author Oluwafemi Akinwa
  */
-const CartItem: React.FC<Props> = ({ item }) => {
-  /**
-   * @desc Removes an item from the cart
-   * @author Oluwafemi Akinwa
-   */
-  const handleItemDelete = () => {
-    alert("Item was removed");
-  };
-
-  const handleIncreaseItem = () => {
-    console.log("One item added");
-  };
-
-  const handleDecreaseItem = () => {
-    console.log("One item removed");
-  };
-
+const CartItem: React.FC<Props> = ({
+  item,
+  handleItemQuantity,
+  handleItemDelete,
+}) => {
   const handleInputChange = () => {};
 
   return (
     <div className="cart-item-wrapper">
       <div className="product-wrapper">
         <div className="product-desc">
-          <div className="product-name">Product Name</div>
-          <span className="product-title">{item.productCount}</span>
+          <div className="product-name">{item.title}</div>
           <div className="price-qtty-wrapper">
             <CartItemQuantity
               handleChange={handleInputChange}
-              increment={handleIncreaseItem}
-              decrement={handleDecreaseItem}
+              increment={handleItemQuantity}
+              decrement={handleItemQuantity}
+              item={item}
             />
-            <div>total</div>
+            <div>{`$${item.price.toFixed(2)}`}</div>
+          </div>
+          <hr />
+          <div className="subtotal-wrapper">
+            <span>Subtotal:</span>
+            <span>
+              {`$${(
+                Number(item.price.toFixed(2)) * Number(item.productCount)
+              ).toFixed(2)}`}
+            </span>
           </div>
         </div>
         <div className="product-img">
-          <div className="delete-btn" onClick={handleItemDelete}>
+          <div className="delete-btn" onClick={() => handleItemDelete(item)}>
             &#x2715;
           </div>
-          <img src="" alt="" />
+          <div>
+            <img
+              src={item.image_url}
+              alt="product-image"
+              className="cart-product-image"
+            />
+          </div>
         </div>
       </div>
     </div>
