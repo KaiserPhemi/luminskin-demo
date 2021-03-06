@@ -4,11 +4,16 @@ import * as React from "react";
 // styles
 import './nav-bar.scss';
 
+// interface 
+interface Props {
+  handleSideBar: ()=>any;
+}
+
 /**
  * @desc Navigation bar
  * @author Oluwafemi Akinwa
  */
-const NavigationBar = () => {
+const NavigationBar: React.FC<Props> = ({ handleSideBar }) => {
   return (
     <header className="main-header">
       <div className="nav-links">
@@ -20,7 +25,9 @@ const NavigationBar = () => {
       </div>
       <div className="account-links">
         <div className="text-format">Account</div>
-        <div className="text-format">Cart</div>
+        <div className="text-format" onClick={handleSideBar}>
+          Cart
+        </div>
       </div>
     </header>
   );

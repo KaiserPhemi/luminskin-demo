@@ -7,11 +7,16 @@ import {ShoppingCartContext} from '../shoppingCartContext/ShoppingCartContext'
 // components
 import ProductListItem from "./ProductListItem";
 
+// interface
+interface Props {
+  sideBar: ()=>any;
+}
+
 /**
  * @desc Displays list of items on page
  * @author Oluwafemi Akinwa
  */
-const ProductList = () => {
+const ProductList: React.FC<Props> = ({ sideBar }) => {
   const { productList } = React.useContext(ShoppingCartContext);
   const { shoppingCart } = React.useContext(ShoppingCartContext);
   const [cart, setCart] = shoppingCart;
@@ -49,12 +54,13 @@ const ProductList = () => {
     } else {
       setCart((prevCart) => [...prevCart, product]);
     }
+    sideBar();
   };
 
   return (
     <div className="product-list-grid">
       {products &&
-        products.map((item: any, index) => (
+        products.map((item: any) => (
           <ProductListItem
             key={item.id}
             productName={item.title}

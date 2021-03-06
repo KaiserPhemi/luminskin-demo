@@ -19,14 +19,25 @@ interface Props {}
  * @desc App
  */
 const App: React.FC<Props> = () => {
+  const [isClose, setIsClose] = React.useState(false);
+  /**
+   * @desc Handles closing side bar
+   * @author Oluwafemi Akinwa
+   */
+  const closeSideBar = () => {
+    setIsClose(!isClose);
+  };
+
   return (
-    <ShoppingCartProvider>
+    <div style={{ height: "100%", position: "relative" }}>
+      <ShoppingCartProvider>
         <div>
-          <NavigationBar />
-          <ProductListingPage />
+          <NavigationBar handleSideBar={closeSideBar} />
+          <ProductListingPage handleSideBar={closeSideBar} />
         </div>
-        <ShoppingCartWidget />
-    </ShoppingCartProvider>
+        <ShoppingCartWidget closeSideBar={closeSideBar} isClose={isClose} />
+      </ShoppingCartProvider>
+    </div>
   );
 };
 

@@ -8,15 +8,20 @@ import ProductList from "./ProductList";
 // styles
 import "./styles.scss";
 
+// interface
+interface Props {
+  handleSideBar: ()=>any;
+}
+
 /**
  * @desc Product listing page
  * @author Oluwafemi Akinwa
  */
-const ProductListPage = () => {
+const ProductListPage: React.FC<Props> = ({ handleSideBar }) => {
   return (
     <div className="product-list-page">
       <PageBanner />
-      <ProductList />
+      <ProductList sideBar={handleSideBar} />
     </div>
   );
 };

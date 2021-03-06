@@ -1,12 +1,29 @@
 .shopping-cart-wrapper {
-  position: absolute;
+  display: none;
+  position: fixed;
   top: 0;
   right: 0;
-  width: 40%;
-  // margin: 2rem auto; 
-  min-height: 100%;
+  bottom: 0;
+  width: 35%;
+  height: 100%;
   padding: 1rem;
+  overflow-y: scroll;
   background-color: #F2F3F0;
+
+  .sidebar-close-btn {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    background: center / contain no-repeat url('../../assets/chevron.png');
+  }
+
+  .cart-title {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #4B5548;
+    text-align: center;
+  }
 
   .cart-item-wrapper {
     margin: 2rem 0;
@@ -118,8 +135,46 @@
     }
   }
 
+  .subtotal {
+    display: flex;
+    color: #4B5548;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .empty-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    height: 100%;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    color: #4B5548;;
+    text-align: center;
+  } 
+   
+  hr {
+    border: 1px solid #E3E6E3;
+    margin: 8rem 0 0.5rem;
+  }
+
   .cart-btn-wrapper {
     display: flex; 
     flex-direction: column;
+    bottom: 0;
+    margin:  1rem 0;
+  }
+  
+}
+
+.close-sidebar {
+  display: block;
+  transition: linear;
+}
+
+@media only screen and (max-width: 768px){
+  .shopping-cart-wrapper {
+    width: 60%;
   }
 }
