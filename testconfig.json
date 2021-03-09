@@ -1,5 +1,0 @@
-{
-  "verbose": true,
-  "testURL": "http://localhost/",
-  "testMatch": ["**index.test.ts?(x)"]
-}
